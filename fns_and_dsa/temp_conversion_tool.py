@@ -7,6 +7,28 @@ def convert_to_celsius(farenheit):
 def convert_to_fahrenheit(celsius):
   return (celsius * CELSIUS_TO_FARENHEIR_FACTOR ) + 32  
 
-temperature =int(input("Enter the temperature (Celsius or Farenheit): "))
-if temperature != range(1,11):
-  print("Error: Invalid Temperature. Please enter a numeric value")
+def main():
+    print("=== Temperature Conversion Tool ===")
+    
+    temp_input = input("Enter the temperature (e.g., 32): ").strip()
+    scale = input("Is this temperature in (C)elsius or (F)ahrenheit? ").strip().upper()
+
+    try:
+        temperature = float(temp_input)
+    except ValueError:
+        raise ValueError("Invalid temperature. Please enter a numeric value.")
+
+    if scale == 'F':
+        celsius = convert_to_celsius(temperature)
+        print(f"{temperature}°F is {celsius:.2f}°C")
+    elif scale == 'C':
+        fahrenheit = convert_to_fahrenheit(temperature)
+        print(f"{temperature}°C is {fahrenheit:.2f}°F")
+    else:
+        raise ValueError("Invalid scale. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+
+if __name__ == "__main__":
+    try:
+        main()
+    except ValueError as e:
+        print(e)
