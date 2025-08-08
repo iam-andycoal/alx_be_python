@@ -14,7 +14,4 @@ class Book:
     print(f"Deleting {self.title}")
 
 
-book = Book("1948", "George Orwell", 1949)
-
-
-
+book = Book("1984", "George Orwell", 1949)
