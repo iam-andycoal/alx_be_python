@@ -26,6 +26,8 @@ class Library:
   def __init__(self, title):
     self.books = []
     self.title = title
+  def __str__(self):
+    return f"{EBook} {PrintBook}"
   
   def add_book(self, book):
     if isinstance(book, Book):
@@ -39,3 +41,4 @@ class Library:
     else:
       for idx, book in enumerate(self.books, start=1):
         print(f"{idx}. {book.get_info(self)}")
+
