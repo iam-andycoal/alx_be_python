@@ -13,4 +13,5 @@ class Book:
   def __repr__(self):
     return f"Book('{self.title}', '{self.author}', '{self.year}')"
 
-book = Book("Steven James", "Opening Moves", 1980)
+
+book = Book("1948", "George Orwell", 1949)
